@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=EB+Garamond:wght@400;500;600&display=swap");
+
+
+:root {
+  --wine: #5c1a2b;
+  --wine-deep: #3a0f1d;
+  --gold: #c9a227;
+  --gold-light: #e6c765;
+  --parchment: #f4ecdb;
+  --ink: #2a2019;
+  --clay: #a8552e;
+}
+
+.engFont {
+  font-family: "EB Garamond", "Cormorant Garamond", serif;
+  font-variant: small-caps;
+  text-transform: none;
+  text-decoration: none;
+  color: var(--ink);
+  letter-spacing: 1.8px;
+  font-weight: 600;
+}
+
+.header_links:hover {
+  color: var(--gold);
+}
+
+.sumbuli_icon {
+  font-family: "Cormorant Garamond", "BPG", serif;
+  font-size: clamp(22px, 2.5vw + 10px, 42px);
+  color: #9e3602;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+  position: relative;
+  padding: 0 18px;
+}
+
+.sumbuli_icon::before {
+  content: "❖";
+  position: absolute;
+  font-size: 0.38em;
+  color: #9e4802;
+  opacity: 0.75;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sumbuli_icon::before {
+  left: -2px;
+}
+
+.sumbuli_icon::after {
+  right: -2px;
+}
+
+.header {
+  position: fixed;
+  top: -10px;
+  background-color: #f6e5be;
+  background-image:
+    radial-gradient(
+      circle at 12% 25%,
+      rgba(201, 162, 39, 0.06) 0,
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 88% 75%,
+      rgba(92, 26, 43, 0.05) 0,
+      transparent 45%
+    );
+  z-index: 3000;
+  margin: 0px auto;
+  width: 100%;
+  height: 98px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px clamp(20px, 5vw, 90px);
+  color: var(--ink);
+  font-size: 20px;
+  border-bottom: 1px solid var(--gold);
+  box-shadow:
+    0 3px 0 -1px var(--wine),
+    0 8px 18px rgba(42, 32, 25, 0.08);
+}
+
+.navBarCloseButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 8px;
+  background-color: rgba(32, 31, 31, 0.726);
+  color: white;
+  border-color: transparent;
+}
+
+.sumbuli_icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: #9e4802;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.sumbuli_icon:hover {
+  color: var(--wine);
+}
+
+.sumbuli_icon:hover::after {
+  transform: scaleX(1);
+}
+
+.active {
+  color: rgb(163, 38, 38);
+}
+
+.active::before {
+  content: "◆";
+  position: absolute;
+  left: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.5em;
+  color: #9e4802;
+}
+
+.active::after {
+  transform: scaleX(1);
+}
+
+.ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2vw + 0px, 34px);
+  margin: 0;
+  padding: 0;
+}
+
+.nav .ul .header_li {
+  display: flex;
+  align-items: end;
+}
+
+.nav .ul .header_li .header_links {
+  /* შეიცვალა შუა პროპორცია 1vw + 5px -ით */
+  font-size: clamp(13px, 1.5vw - 3px, 18px);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+}
+
+.ndiv {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.eng {
+  background-color: transparent;
+  color: var(--wine);
+  border: 1px solid var(--gold);
+  padding: 6px 14px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  font-size: clamp(13px, 0.8vw + 9px, 18px);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  cursor: pointer;
+}
+
+.eng:hover {
+  background-color: var(--wine);
+  color: var(--parchment);
+}
+
+.icon {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.fontaw {
+  font-size: 20px;
+  color: var(--wine);
+  background-color: var(--parchment);
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  padding: 10px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  cursor: pointer;
+}
+
+.fontaw:hover {
+  background-color: var(--wine);
+  color: var(--gold-light);
+}
+
+.navBarBtn {
+  display: none;
+}
+
+@media (max-width: 1040px) {
+  .eng {
+    margin-left: 10px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .navBarBtn.openBtn {
+    display: flex;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 38px;
+    height: 38px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--parchment);
+    color: var(--wine);
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 201;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .openBtn:hover {
+    background-color: var(--wine);
+    color: var(--gold-light);
+    transform: rotate(90deg);
+  }
+
+  .nav {
+    top: 0;
+    right: 0;
+    position: fixed;
+    width: 500px;
+    max-width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--parchment);
+    z-index: 200;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.7s ease-in-out;
+    border-left: 1px solid var(--gold);
+  }
+
+  .open {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+  }
+
+  .nav .ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 34px; /* აქ gap-მა ჩაანაცვლა მობაილის li-ს margin-top */
+  }
+
+  .nav .ul .header_li {
+    margin: 0 0 0 30px;
+    text-align: center;
+  }
+
+  .engFont {
+  font-family: "EB Garamond", "Cormorant Garamond", serif;
+  font-variant: small-caps;
+  text-transform: none;
+  text-decoration: none;
+  color: var(--wine-deep );
+  letter-spacing: 1.8px;
+  font-weight: 600;
+}
+
+.header_links:hover {
+  color: var(--clay);
+}
+
+  .nav .ul .header_li .active {
+    color: var(--gold);
+  }
+}
+
+@media (min-width: 1040px) {
+  .fontaw {
+    display: none;
+  }
+
+  .nav {
+    display: block;
+  }
+}
+
+@media (max-width: 1400px) {
+  .header {
+    padding: 20px 30px;
+  }
+}

@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=EB+Garamond:wght@400;500;600&display=swap");
+
+:root {
+  --wine: #5c1a2b;
+  --wine-deep: #3a0f1d;
+  --gold: #c9a227;
+  --gold-light: #e6c765;
+  --parchment: #f4ecdb;
+  --ink: #2a2019;
+  --clay: #a8552e;
+}
+
+.mainContent {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 100px;
+  /* background-color: #f0f0f0; */ /* მშობელს აქვს უკვე ფერი */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.divForFlexOfBlogs {
+  display: flex;
+  background-color: transparent; /* #f6f7f8; */
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+}
+
+.divForFlexOfBlogs:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.blogItemText {
+  padding: 50px 20px;
+  flex-grow: 1;
+}
+
+.blogItemTextTitle {
+  font-size: 20px;
+  font-family:
+    "Cormorant Garamond", serif; /* ეს შეგვიძლია წავშალოთ, რადგან უკვე გვაქვს */
+}
+
+.blogItemTextDescription {
+  font-size: 18px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.blogItemTextLink {
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.blogItemTextLink:hover {
+  color: var(--gold);
+}
+
+.blogItem {
+  flex: 0 0 500px;
+  overflow: hidden;
+}
+
+.blogItemImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 2s ease-in-out;
+}
+
+.blogItem:hover .blogItemImage {
+  transform: scale(1.9);
+}
+
+@media (max-width: 990px) {
+  .divForFlexOfBlogs {
+    display: flex;
+    background-color: transparent; /* #f6f7f8; */
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  .blogItemImage {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .mainContent {
+    width: 90%;
+  }
+
+  .blogItem {
+    flex: unset;
+    width: 500px;
+    max-width: 100%;
+  }
+}

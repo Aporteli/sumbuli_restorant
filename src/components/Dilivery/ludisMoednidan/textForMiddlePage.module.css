@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "BPG_Glaho";
+  src: url("/fonts/bpg_glaho.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "MainFont";
+  src: url("/fonts/bpg_nino_mtavruli_normal.ttf") format("truetype");
+}
+
+.h2 {
+  font-family: "MainFont", sans-serif;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 30px;
+}

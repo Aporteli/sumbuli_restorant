@@ -1,0 +1,21 @@
+
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(30, 9%, 96%);
+  margin: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+

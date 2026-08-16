@@ -1,0 +1,647 @@
+@font-face {
+  font-family: "MainFont";
+  src: url("/fonts/bpg_nino_mtavruli_normal.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FiraGO";
+  src: url("public/fonts/firago-latin-300-normal.ttf") format("truetype");
+}
+
+.mainDiv {
+  /* border: 2px solid red; */
+  position: relative;
+}
+
+.mainImageDiv {
+  position: relative;
+  margin-top: 100px;
+  width: 100%;
+  height: 25vw;
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.divOnMainImageForCover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: hsla(0, 0%, 0%, 0.493);
+}
+
+.divForWhiteBoxOnImage {
+  position: absolute;
+  bottom: 30%;
+  right: 70%;
+  width: 200px;
+  height: 200px;
+  border-top: 10px solid white;
+  border-left: 10px solid white;
+  border-bottom: 10px solid white;
+}
+
+.divForWhiteBoxOnImage::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 10px;
+  height: 200px;
+  background: linear-gradient(
+    to bottom,
+    white 75px,
+    transparent 75px,
+    transparent 125px,
+    white 125px
+  );
+}
+
+.textOnMainImage {
+  position: absolute;
+  width: 500px;
+  bottom: 40%;
+  left: 20%;
+  color: white;
+  font-family: "textStyle", sans-serif;
+  font-size: 25px;
+  letter-spacing: 5px;
+}
+
+.divForLinkOnImage {
+  position: absolute;
+  top: 120%;
+  color: white;
+}
+
+.navLink {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+.navLink:hover {
+  color: rgb(58, 55, 55);
+  cursor: pointer;
+}
+
+.sivrceei {
+  width: 93%;
+  max-width: 1200px;
+  margin: 40px auto 70px auto;
+}
+
+.sliderMusic {
+  width: 93%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.deliverySection {
+  /* border: 3px solid black; */
+  width: 93%;
+  margin: auto;
+}
+
+.other_delivery {
+  margin-top: 100px;
+  font-family: "MainFont", sans-serif;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 30px;
+}
+
+.shortDivLine {
+  border: 1px solid;
+  width: 50px;
+  height: 4px;
+  background-color: black;
+  margin: 30px 0;
+}
+
+.sectionTitle {
+  font-family: "MainFont", sans-serif;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 30px;
+}
+
+/* ══════════════════════════════════════════
+   Middle Div (სურათები და ტექსტები)
+══════════════════════════════════════════ */
+.middleDiv {
+  /* border: 2px solid blue; */
+  position: relative;
+  width: 93%;
+  margin: 0 auto;
+  /* padding: 0 15px 50px; */
+  box-sizing: border-box;
+}
+
+.frameForImageInMiddleDiv {
+  border: 7px solid black;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 88%;
+  height: 88%;
+  box-sizing: border-box;
+}
+
+.imageInFrameDiv {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 88%;
+  height: 88%;
+  z-index: 2;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.middleImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.divForImageAndText {
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 50px auto 0;
+  box-sizing: border-box;
+  gap: 40px;
+}
+
+.divForImageAndFrame {
+  /* border: 2px solid black; */
+  position: relative;
+  width: 40%;
+  max-width: 450px;
+  aspect-ratio: 3 / 4;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.divForTextAndSlider {
+  /* border: 3px solid yellow; */
+  width: 55%;
+  max-width: 650px;
+  padding-top: 20px;
+  flex-shrink: 1;
+}
+
+/* ══════════════════════════════════════════
+   ფიქსირებული ღილაკები
+══════════════════════════════════════════ */
+.whatsAppIcon {
+  /* border: 1px solid red; */
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 500px;
+  right: 0;
+  width: 60px;
+  height: 50px;
+  z-index: 2000;
+  background-color: rgb(221, 164, 57);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.whatsAppIcon:hover {
+  background-color: black;
+}
+
+.whatsApp {
+  font-size: 30px;
+  color: white;
+}
+
+.massengerIcon {
+  /* border: 1px solid red; */
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 560px;
+  right: 0;
+  width: 60px;
+  height: 50px;
+  z-index: 2000;
+  background-color: rgb(221, 164, 57);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.massengerIcon:hover {
+  background-color: black;
+}
+
+.massenger {
+  font-size: 30px;
+  color: white;
+}
+
+.gamoidzaxe {
+  /* border: 1px solid red; */
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 620px;
+  right: 0;
+  width: 150px;
+  height: 50px;
+  z-index: 2000;
+  font-family: "MainFont", sans-serif;
+  font-size: 22px;
+  color: white;
+  background-color: rgb(221, 164, 57);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.gamoidzaxe:hover {
+  background-color: black;
+}
+
+.scrollUpDiv {
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  bottom: 30px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  z-index: 2000;
+  color: white;
+  font-size: 30px;
+  background-color: black;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.5s ease-in-out,
+    visibility 0.5s ease-in-out;
+}
+
+.showScrollUpDiv {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scrollUpDiv:hover {
+  cursor: pointer;
+}
+
+.scrollUpIcon {
+  animation: moveCharUpDown 2s infinite;
+  animation-timing-function: steps(2, start);
+}
+
+@keyframes moveCharUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(4px);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+
+  75% {
+    transform: translateY(4px);
+  }
+}
+
+/* ==========================================================================
+  მოდალური ფანჯარა (Modal Window / Lightbox)
+   ========================================================================== */
+
+/* მოდალის მთავარი უკანა ფონი */
+.modal {
+  /* border: 2px solid red; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* მოდალის შიდა გარე კონტენტი */
+.outerModalContent {
+  /* border: 2px solid green; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* დახურვის (X) ღილაკი */
+.closeModalButton {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.closeModalButton:hover {
+  color: #ccc;
+}
+
+/* გადასართველი ისრები (Next / Prev) */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+  z-index: 10000;
+  transition: transform 0.1s ease-in-out;
+}
+
+.prev {
+  left: 5%;
+}
+
+.next {
+  right: 5%;
+}
+
+/* ისრის კლიკის (აქტიური მდგომარეობის) ანიმაცია */
+.buttonDown {
+  transform: translateY(-50%) scale(0.8);
+}
+
+/* მოდალის ძირითადი შიგთავსი */
+.modalContent {
+  /* border: 2px solid yellow; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* სურათის სლაიდერების ბლოკები */
+.imageSlider {
+  /* border: 2px solid blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 0;
+}
+
+/* ==========================================================================
+  მოდალის სურათები და ქაუნთერი (Modal Images & Counter)
+   ========================================================================== */
+
+/* მოდალში გახსნილი სურათების ზომების მართვა */
+.modalImages {
+  max-width: 95vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* სურათების რაოდენობის მაჩვენებელი ტექსტი (მაგ: 1 of 5) */
+.countImages {
+  position: relative;
+  margin-top: 20px;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 1px;
+  z-index: 10000;
+}
+
+/* ══════════════════════════════════════════
+   Media Queries (Responsive & Mobile)
+══════════════════════════════════════════ */
+@media (max-width: 1400px) {
+  .whatsAppIcon {
+    width: 50px;
+    height: 50px;
+  }
+  .massengerIcon {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 1240px) {
+  /* სურათი და ტექსტი ჩამოვა ერთმანეთის ქვეშ */
+  .divForImageAndText {
+    flex-direction: column;
+    align-items: center;
+  }
+  .divForImageAndFrame {
+    width: 80%;
+    max-width: 450px;
+    aspect-ratio: 3 / 4;
+  }
+  .divForTextAndSlider {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .adressesOuter {
+    width: 100%;
+    max-width: unset;
+  }
+}
+
+@media (max-width: 1000px) {
+  .divForWhiteBoxOnImage {
+    bottom: 25%;
+    left: 5%;
+    width: 180px;
+    height: 130px;
+    border: 8px solid white;
+    border-right: none;
+  }
+
+  .divForWhiteBoxOnImage::after {
+    top: -8px;
+    right: -8px;
+    width: 8px;
+    height: 130px;
+    background: linear-gradient(
+      to bottom,
+      white 43px,
+      transparent 43px,
+      transparent 86px,
+      white 86px
+    );
+  }
+}
+
+/* ანიმაცია ეკრანის შევიწროებისას (დესკტოპზე დაბრუნებისას) */
+
+@media (max-width: 770px) {
+  .whatsAppIcon {
+    top: unset;
+    bottom: 0px;
+    left: 20px;
+    animation: whatsAppAnim 0.2s linear;
+  }
+
+  @keyframes whatsAppAnim {
+    from {
+      bottom: 150px;
+    }
+
+    to {
+      bottom: 0px;
+    }
+  }
+
+  .massengerIcon {
+    top: unset;
+    bottom: 0px;
+    left: 90px;
+    animation: massengerAnim 0.2s;
+    animation-timing-function: linear;
+  }
+
+  @keyframes massengerAnim {
+    from {
+      bottom: 100px;
+    }
+
+    to {
+      bottom: 0px;
+    }
+  }
+
+  .gamoidzaxe {
+    top: unset;
+    bottom: 0px;
+    left: 160px;
+    animation: gamoidzaxeAnim 0.2s linear;
+  }
+
+  @keyframes gamoidzaxeAnim {
+    from {
+      bottom: 50px;
+    }
+
+    to {
+      bottom: 0px;
+    }
+  }
+
+  .scrollUpDiv {
+    bottom: 10px;
+  }
+}
+
+/* ანიმაცია ეკრანის გაფართოებისას (დესკტოპზე დაბრუნებისას) */
+
+@media (min-width: 771px) {
+  .whatsAppIcon {
+    animation: slideUpWhatsApp 0.3s ease-out;
+  }
+
+  @keyframes slideUpWhatsApp {
+    from {
+      top: 650px;
+    }
+    to {
+      top: 500px;
+    }
+  }
+
+  .massengerIcon {
+    animation: slideUpMassenger 0.3s ease-out;
+  }
+
+  @keyframes slideUpMassenger {
+    from {
+      top: 660px;
+    }
+    to {
+      top: 560px;
+    }
+  }
+
+  .gamoidzaxe {
+    animation: slideUpGamoidzaxe 0.3s ease-out;
+  }
+
+  @keyframes slideUpGamoidzaxe {
+    from {
+      top: 670px;
+    }
+    to {
+      top: 620px;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .mainImageDiv {
+    height: 60vh;
+  }
+
+  .divForWhiteBoxOnImage {
+    bottom: 30%;
+    left: 5%;
+    width: 80%;
+    max-width: 250px;
+  }
+
+  .textOnMainImage {
+    border: 2px solid red;
+    width: 100%;
+    top: 45px;
+    left: 10px;
+    font-size: 20px;
+  }
+
+  .divForLinkOnImage {
+    top: 110%;
+    left: 10px;
+    font-size: 14px;
+  }
+
+  .divForImageAndFrame {
+    width: 80%;
+    max-width: 320px;
+  }
+}

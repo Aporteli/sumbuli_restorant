@@ -1,0 +1,213 @@
+:root {
+  --wine: #5c1a2b;
+  --wine-deep: #3a0f1d;
+  --gold: #c9a227;
+  --gold-light: #e6c765;
+  --parchment: #f4ecdb;
+  --ink: #2a2019;
+  --clay: #a8552e;
+}
+
+.section {
+  margin-top: 105px;
+  width: 100%;
+  position: relative;
+  height: auto;
+}
+
+.outerDiv {
+  overflow: hidden;
+  position: relative;
+  box-shadow:
+    0 0 0 6px var(--parchment),
+    0 10px 30px rgba(42, 32, 25, 0.18);
+}
+
+.section::before,
+.section::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 2px solid var(--gold);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.section::before {
+  top: -8px;
+  left: -8px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.section::after {
+  bottom: -8px;
+  right: -8px;
+  border-left: none;
+  border-top: none;
+}
+
+.sliderDiv {
+  /* border: 2px solid red; */
+  position: relative;
+  width: 100%;
+  height: 30vw;
+  display: flex;
+  gap: 20px;
+}
+
+.imageContainer {
+  position: relative; /* absolute-დან შევცვალეთ relative-ზე */
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+/* სურათმა დაიკავოს კონტეინერის 100% */
+.imgSliderImg {
+  object-fit: cover;
+  width: 100%;
+  height: 100%; /* auto-დან შევცვალეთ 100%-ზე */
+  display: block;
+}
+
+/* გადასაფარებელი ფონის საწყისი მდგომარეობა */
+.divOnImage {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.4s ease-in-out;
+}
+
+/* ეფექტი მაუსის გადატარებისას (Hover) */
+.divOnImage:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.imgSliderBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  background: rgb(128, 34, 58);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition:
+    background 0.3s ease-in-out,
+    transform 0.2s ease;
+}
+
+.imgSliderBtn:hover,
+.imgSliderBtn:focus-visible {
+  background: linear-gradient(135deg, var(--gold), var(--clay));
+}
+
+.imgSliderBtn:hover *,
+.imgSliderBtn:focus-visible * {
+  fill: var(--wine-deep);
+  stroke: var(--wine-deep);
+}
+
+.imgSliderBtn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.imgSliderBtn > * {
+  margin: 0 auto;
+  stroke: var(--gold-light);
+  fill: var(--gold-light);
+  width: 13px;
+  height: 20px;
+  transition:
+    fill 0.3s ease,
+    stroke 0.3s ease;
+}
+
+.left {
+  left: 24px;
+  transform: translateY(-50%);
+}
+
+.right {
+  right: 24px;
+  transform: translateY(-50%);
+}
+
+@keyframes squish {
+  50% {
+    scale: 1.4 0.6;
+  }
+}
+
+@media not (prefers-reduced-motion) {
+  .imgSliderBtn {
+    transition:
+      background 0.3s ease-in-out,
+      translate 300ms ease-in-out;
+  }
+
+  .imgSliderBtn:hover > *,
+  .imgSliderBtn:focus-visible > * {
+    animation: squish 200ms ease-in-out;
+  }
+}
+
+@media (max-width: 1400px) {
+  .imgSliderBtn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .left {
+    left: 14px;
+  }
+
+  .right {
+    right: 14px;
+  }
+}
+
+@media (max-width: 760px) {
+  .firstSliderDiv {
+    height: 90vw;
+    width: 120%;
+    margin-left: -40px;
+  }
+
+  .section::before,
+  .section::after {
+    width: 18px;
+    height: 18px;
+  }
+
+  .imgSliderBtn {
+    top: unset;
+    width: 36px;
+    height: 36px;
+  }
+
+  .left {
+    bottom: 12px;
+    left: 12px;
+    transform: unset;
+  }
+
+  .right {
+    bottom: 12px;
+    right: 12px;
+    transform: unset;
+  }
+}

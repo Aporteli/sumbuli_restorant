@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=EB+Garamond:wght@400;500;600&display=swap");
+
+@font-face {
+  font-family: "textNameOnImages";
+  src: url("../../../public/fonts/bpg_nino_mtavruli_normal.ttf")
+    format("truetype");
+}
+
+:root {
+  --wine: #5c1a2b;
+  --wine-deep: #3a0f1d;
+  --gold: #c9a227;
+  --gold-light: #e6c765;
+  --parchment: #f4ecdb;
+  --ink: #2a2019;
+  --clay: #a8552e;
+}
+
+.mainDiv {
+  position: relative;
+}
+
+.outerDiv {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--gold);
+}
+
+.sliderDiv {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+  margin: 30px 0;
+}
+
+.flexDiv {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.textOnImages {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  user-select: none;
+  background-color: hsla(0, 0%, 0%, 0.28);
+  transition: background-color 0.5s ease-in-out;
+}
+
+.textOnImages:hover {
+  background-color: hsla(0, 0%, 0%, 0.707);
+}
+
+.textNameOnImages {
+  position: absolute;
+  color: #fff;
+  user-select: none;
+  top: 25px;
+  left: 30px;
+  font-size: 23px;
+  font-weight: 400;
+  font-family: "Cormorant Garamond", sans-serif;
+  letter-spacing: 1.2px;
+}
+
+.metisNaxva {
+  position: absolute;
+  bottom: 80px;
+  right: -20px;
+  height: 25px;
+  display: flex;
+  align-items: flex-end;
+  transform: rotate(-90deg);
+  color: #fff;
+  border-left: 2px solid var(--gold-light);
+  padding-left: 20px;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  user-select: none;
+  font-family: "Cormorant Garamond", sans-serif;
+}
+
+.images {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+}
+
+.btnContainer {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.Btn,
+.BtnStop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: absolute; */
+  font-size: 13px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  padding: 0;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.Btn {
+  background: linear-gradient(135deg, var(--wine), var(--wine-deep));
+  cursor: pointer;
+}
+
+.BtnStop {
+  background: linear-gradient(
+    135deg,
+    rgba(58, 15, 29, 0.4),
+    rgba(58, 15, 29, 0.25)
+  );
+  color: rgba(230, 199, 101, 0.4);
+  cursor: default;
+}
+
+.Btn:hover {
+  background: linear-gradient(135deg, var(--gold), var(--clay));
+  color: var(--wine-deep);
+}
+
+.right {
+  left: 45px;
+}
+
+.horizontalLine {
+  user-select: none;
+  opacity: 0;
+  left: 20px;
+  top: 20px;
+  width: 5%;
+  border-top: 2px solid var(--gold-light);
+  position: absolute;
+  transition:
+    opacity 0.5s ease-in-out,
+    width 0.5s ease-in-out,
+    left 0.5s ease-in-out;
+}
+
+.flexDiv:hover .horizontalLine {
+  opacity: 1;
+  width: 100%;
+  left: -20px;
+}
+
+.verticalLine {
+  user-select: none;
+  opacity: 0;
+  top: 20px;
+  left: 20px;
+  height: 5%;
+  border-left: 2px solid var(--gold-light);
+  position: absolute;
+  transition:
+    opacity 0.5s ease-in-out,
+    height 0.5s ease-in-out,
+    top 0.5s ease-in-out;
+}
+
+.flexDiv:hover .verticalLine {
+  opacity: 1;
+  height: 100%;
+  top: -20px;
+}

@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=EB+Garamond:wght@400;500;600&display=swap");
+
+@font-face {
+  font-family: "textNameOnImages";
+  src: url("../../../public/fonts/bpg_nino_mtavruli_normal.ttf")
+    format("truetype");
+}
+
+:root {
+  --wine: #5c1a2b;
+  --wine-deep: #3a0f1d;
+  --gold: #c9a227;
+  --gold-light: #e6c765;
+  --parchment: #f4ecdb;
+  --ink: #2a2019;
+  --clay: #a8552e;
+}
+
+.mainDiv {
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.outerDiv {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--gold);
+}
+
+.sliderDiv {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+}
+
+.flexDiv {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.images {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  flex-shrink: 0;
+  flex-grow: 0;
+  user-select: none;
+}
+
+.Btn,
+.BtnStop {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-size: 13px;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  margin-right: 10px;
+  cursor: pointer;
+  transition:
+    background 0.3s ease-in-out,
+    color 0.3s ease-in-out;
+}
+
+.Btn {
+  background: linear-gradient(135deg, var(--wine), var(--wine-deep));
+}
+
+.BtnStop {
+  background: linear-gradient(
+    135deg,
+    rgba(58, 15, 29, 0.4),
+    rgba(58, 15, 29, 0.25)
+  );
+  color: rgba(230, 199, 101, 0.4);
+  cursor: default;
+}
+
+.Btn:hover {
+  background: linear-gradient(135deg, var(--gold), var(--clay));
+  color: var(--wine-deep);
+}
+
+.BtnStop:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(58, 15, 29, 0.4),
+    rgba(58, 15, 29, 0.25)
+  );
+  color: rgba(230, 199, 101, 0.4);
+}
+
+.right {
+  left: 45px;
+}
+
+.textOnImages {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  color: var(--parchment);
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 0%, 0.28);
+  transition: background-color 0.5s ease-in-out;
+  user-select: none;
+}
+
+.textOnImages:hover {
+  background-color: hsla(0, 0%, 0%, 0.707);
+}
+
+.metisNaxva {
+  font-family: "Cormorant Garamond";
+  font-size: 1rem;
+  position: absolute;
+  bottom: 70px;
+  right: -20px;
+  transform: rotate(-90deg);
+  border-left: 2px solid var(--gold);
+  padding-left: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #fff;
+  user-select: none;
+}
+
+.textNameOnImage {
+  font-family: "Cormorant Garamond";
+  font-size: 25px;
+  margin: 20px 0 20px 30px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  color: #fff;
+  user-select: none;
+}
+
+.horizontalLine {
+  opacity: 0;
+  top: 20px;
+  left: 20px;
+  width: 5%;
+  border-top: 1px solid var(--gold-light);
+  position: absolute;
+  transition:
+    opacity 0.5s ease-in-out,
+    width 0.5s ease-in-out,
+    left 0.5s ease-in-out;
+}
+
+.textOnImages:hover .horizontalLine {
+  opacity: 1;
+  width: 92%;
+  left: -20px;
+}
+
+.verticalLine {
+  top: 20px;
+  left: 20px;
+  height: 5%;
+  border-left: 1px solid var(--gold-light);
+  position: absolute;
+  opacity: 0;
+  transition:
+    opacity 0.5s ease-in-out,
+    height 0.5s ease-in-out,
+    top 0.5s ease-in-out;
+}
+
+.textOnImages:hover .verticalLine {
+  opacity: 1;
+  height: 95%;
+  top: -20px;
+}

@@ -1,0 +1,420 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=EB+Garamond:wght@400;500;600&display=swap");
+
+@font-face {
+  font-family: "BPG";
+  src: url("/fonts/bpg_nino_mtavruli_normal.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "BPG-EXCELSIOR";
+  src: url("/fonts/bpg_excelsior_caps_dejavu_2010.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "RETRO_FLORAL";
+  src: url("/fonts/Retro/Floral.ttf") format("truetype");
+}
+
+:root {
+  --wine: #5c1a2b;
+  --wine-deep: #3a0f1d;
+  --gold: #c9a227;
+  --gold-light: #e6c765;
+  --parchment: #f4ecdb;
+  --ink: #2a2019;
+  --clay: #a8552e;
+}
+
+.mainDiv {
+  position: relative;
+  background-color: #f5eedf;
+  padding-bottom: 10px;
+  background-image:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(201, 162, 39, 0.04),
+      transparent 40%
+    ),
+    radial-gradient(circle at 90% 30%, rgba(92, 26, 43, 0.03), transparent 45%);
+}
+
+.homePageMainDiv {
+  width: 100%;
+  padding: 0 90px;
+}
+
+.home_h1,
+.home_1 {
+  position: relative;
+  font-family: "Cormorant Garamond", serif;
+  font-variant: small-caps;
+  text-transform: none;
+  text-decoration: none;
+  color: var(--ink);
+  letter-spacing: 1.6px;
+  margin-top: 110px;
+  font-size: 44px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.home_h1::before,
+.home_1::before {
+  content: "❖";
+  color: var(--gold);
+  font-size: 0.4em;
+  margin-right: 14px;
+  vertical-align: middle;
+}
+
+.shortDivLine {
+  position: relative;
+  width: 110px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold) 15%,
+    var(--clay) 50%,
+    var(--gold) 85%,
+    transparent
+  );
+  margin: 34px 0 46px 0;
+}
+
+.shortDivLine::before {
+  content: "◆";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--gold);
+  font-size: 13px;
+  background: #fffdf8;
+  padding: 0 8px;
+}
+
+.NavmdQartuli {
+  position: relative;
+  border-right: 3px solid var(--gold);
+  margin: 70px 0;
+  text-align: right;
+  padding-right: 22px;
+  font-family: "Cormorant Garamond", sans-serif;
+}
+
+.NavmdQartuli::before {
+  content: "";
+  position: absolute;
+  right: -3px;
+  top: -10px;
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid var(--gold);
+  border-right: 3px solid var(--gold);
+}
+
+.NavmdQartuli::after {
+  content: "";
+  position: absolute;
+  right: -3px;
+  bottom: -10px;
+  width: 10px;
+  height: 10px;
+  border-bottom: 3px solid var(--gold);
+  border-right: 3px solid var(--gold);
+}
+
+.NavmdQartuli > :first-child {
+  font-size: 50px;
+  color: var(--wine);
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.NavmdQartuli > :nth-child(2) {
+  font-size: 24px;
+  color: var(--ink);
+  letter-spacing: 1px;
+}
+
+.whatsAppIcon {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 500px;
+  right: 0;
+  width: 58px;
+  height: 50px;
+  z-index: 2000;
+  background: linear-gradient(135deg, var(--wine), var(--wine-deep));
+  border: 1px solid var(--gold);
+  border-right: none;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease-in-out;
+}
+
+.whatsAppIcon:hover {
+  background: linear-gradient(135deg, var(--gold), var(--clay));
+}
+
+.whatsApp {
+  font-size: 26px;
+  color: var(--gold-light);
+  transition: color 0.3s ease-in-out;
+}
+
+.whatsAppIcon:hover .whatsApp {
+  color: var(--wine-deep);
+}
+
+.massengerIcon {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 560px;
+  right: 0;
+  width: 58px;
+  height: 50px;
+  z-index: 2000;
+  background: linear-gradient(135deg, var(--wine), var(--wine-deep));
+  border: 1px solid var(--gold);
+  border-right: none;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease-in-out;
+}
+
+.massengerIcon:hover {
+  background: linear-gradient(135deg, var(--gold), var(--clay));
+}
+
+.massenger {
+  font-size: 26px;
+  color: var(--gold-light);
+  transition: color 0.3s ease-in-out;
+}
+
+.massengerIcon:hover .massenger {
+  color: var(--wine-deep);
+}
+
+.gamoidzaxe {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 620px;
+  right: 0;
+  width: 160px;
+  height: 50px;
+  z-index: 2000;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--gold-light);
+  background: linear-gradient(135deg, var(--wine), var(--wine-deep));
+  border: 1px solid var(--gold);
+  border-right: none;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+  transition:
+    background 0.3s ease-in-out,
+    color 0.3s ease;
+}
+
+.gamoidzaxe:hover {
+  background: linear-gradient(135deg, var(--gold), var(--clay));
+  color: var(--wine-deep);
+}
+
+.scrollUpDiv {
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  bottom: 30px;
+  right: 10px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  z-index: 2000;
+  color: var(--gold-light);
+  font-size: 26px;
+  background: radial-gradient(circle at 30% 30%, var(--wine), var(--wine-deep));
+  border: 1px solid var(--gold);
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition:
+    opacity 0.5s ease-in-out,
+    visibility 0.5s ease-in-out,
+    transform 0.3s ease;
+}
+
+.showScrollUpDiv {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scrollUpDiv:hover {
+  cursor: pointer;
+  transform: translateY(-3px);
+}
+
+.scrollUpIcon {
+  animation: moveCharUpDown 2s infinite;
+  animation-timing-function: steps(2, start);
+}
+
+@keyframes moveCharUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(4px);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+
+  75% {
+    transform: translateY(4px);
+  }
+}
+
+@media (max-width: 1400px) {
+  .homePageMainDiv {
+    padding: 0 30px;
+  }
+}
+
+@media (min-width: 771px) {
+  .whatsAppIcon {
+    animation: slideUpWhatsApp 0.3s ease-out;
+  }
+
+  @keyframes slideUpWhatsApp {
+    from {
+      top: 650px;
+    }
+    to {
+      top: 500px;
+    }
+  }
+
+  .massengerIcon {
+    animation: slideUpMassenger 0.3s ease-out;
+  }
+
+  @keyframes slideUpMassenger {
+    from {
+      top: 660px;
+    }
+    to {
+      top: 560px;
+    }
+  }
+
+  .gamoidzaxe {
+    animation: slideUpGamoidzaxe 0.3s ease-out;
+  }
+
+  @keyframes slideUpGamoidzaxe {
+    from {
+      top: 670px;
+    }
+    to {
+      top: 620px;
+    }
+  }
+}
+
+@media (max-width: 770px) {
+  .whatsAppIcon {
+    top: unset;
+    bottom: 0px;
+    left: 20px;
+    animation: whatsAppAnim 0.2s linear;
+  }
+
+  @keyframes whatsAppAnim {
+    from {
+      bottom: 150px;
+    }
+
+    to {
+      bottom: 0px;
+    }
+  }
+
+  .massengerIcon {
+    top: unset;
+    bottom: 0px;
+    left: 90px;
+    animation: massengerAnim 0.2s;
+    animation-timing-function: linear;
+  }
+
+  @keyframes massengerAnim {
+    from {
+      bottom: 100px;
+    }
+
+    to {
+      bottom: 0px;
+    }
+  }
+
+  .gamoidzaxe {
+    top: unset;
+    bottom: 0px;
+    left: 160px;
+    animation: gamoidzaxeAnim 0.2s linear;
+  }
+
+  @keyframes gamoidzaxeAnim {
+    from {
+      bottom: 50px;
+    }
+
+    to {
+      bottom: 0px;
+    }
+  }
+
+  .scrollUpDiv {
+    bottom: 10px;
+  }
+}
+
+@media (max-width: 570px) {
+  .home_h1,
+  .home_1,
+  .NavmdQartuli > :first-child,
+  .NavmdQartuli > :nth-child(2) {
+    font-size: 25px !important;
+  }
+
+  .NavmdQartuli {
+    margin: unset;
+    margin: 30px 0 30px 0;
+  }
+
+  .home_h1,
+  .home_1 {
+     margin-top: unset;
+     margin: 20px 0 20px 0;
+  }
+}
+
+@media (max-width:400px) {
+  .scrollUpDiv {
+    bottom: 65px;
+  }
+}

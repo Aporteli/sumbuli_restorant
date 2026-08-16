@@ -1,0 +1,503 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=EB+Garamond:wght@400;500;600&display=swap");
+
+
+:root {
+  --wine: #5c1a2b;
+  --wine-deep: #3a0f1d;
+  --gold: #c9a227;
+  --gold-light: #e6c765;
+  --parchment: #f4ecdb;
+  --ink: #2a2019;
+  --clay: #a8552e;
+}
+
+.mainDiv {
+  /* border: 2px solid red; */
+  position: relative;
+  background-color: var(--parchment);
+  padding-bottom: 20px;
+}
+
+.mainImageDiv {
+  position: relative;
+  margin-top: 100px;
+  width: 100%;
+  height: 25vw;
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.05) contrast(1.02);
+}
+
+.divOnMainImageForCover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.496) 0%;
+}
+
+/* ==========================================================================
+     4. დეკორატიული ჩარჩო და ტექსტები ქავერზე
+     ========================================================================== */
+.divForWhiteBoxOnImage {
+  position: absolute;
+  bottom: 30%;
+  right: 70%;
+  width: 200px;
+  height: 200px;
+  border-top: 10px solid var(--gold);
+  border-left: 10px solid var(--gold);
+  border-bottom: 10px solid var(--gold);
+}
+
+.divForWhiteBoxOnImage::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 10px;
+  height: 200px;
+  background: linear-gradient(
+    to bottom,
+    var(--gold) 75px,
+    transparent 75px,
+    transparent 125px,
+    var(--gold) 125px
+  );
+}
+
+.textOnMainImage {
+  position: absolute;
+  width: 500px;
+  bottom: 40%;
+  left: 20%;
+  color: #fff;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+     5. ნავიგაცია და ლინკები (Breadcrumbs)
+     ========================================================================== */
+.divForLinkOnImage {
+  position: absolute;
+  top: 110%;
+  color: #fff;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.6px;
+}
+
+.mtavariLink,
+.obieqtebiLink {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease-in-out;
+}
+
+.mtavariLink:hover,
+.obieqtebiLink:hover {
+  color: var(--gold-light);
+  cursor: pointer;
+}
+
+.dividerContainer {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  margin: 40px auto 0 auto;
+}
+
+.dividerTitle {
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.6px;
+}
+
+.divider {
+  width: 60px;
+  height: 2px;
+  background: var(--wine);
+  margin: 10px 0;
+}
+
+.mapContainer {
+  width: 80%;
+  margin: 20px auto;
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mapInfo {
+  padding: 20px;
+  background: var(--wine);
+  color: var(--parchment);
+}
+
+.mapInfoTitle {
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.6px;
+  margin-bottom: 10px;
+}
+
+.mapInfoText {
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.6px;
+  margin: 5px 0;
+  line-height: 1.6;
+}
+
+/* ══════════════════════════════════════════
+   ფიქსირებული ღილაკები
+══════════════════════════════════════════ */
+.whatsAppIcon {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 500px;
+  right: 0;
+  width: 58px;
+  height: 50px;
+  z-index: 2000;
+  background: linear-gradient(135deg, var(--wine), var(--wine-deep));
+  border: 1px solid var(--gold);
+  border-right: none;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease-in-out;
+}
+
+.whatsAppIcon:hover {
+  background: linear-gradient(135deg, var(--gold), var(--clay));
+}
+
+.whatsApp {
+  font-size: 26px;
+  color: var(--gold-light);
+  transition: color 0.3s ease-in-out;
+}
+
+.whatsAppIcon:hover .whatsApp {
+  color: var(--wine-deep);
+}
+
+/* Messenger */
+.massengerIcon {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 560px;
+  right: 0;
+  width: 58px;
+  height: 50px;
+  z-index: 2000;
+  background: linear-gradient(135deg, var(--wine), var(--wine-deep));
+  border: 1px solid var(--gold);
+  border-right: none;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease-in-out;
+}
+
+.massengerIcon:hover {
+  background: linear-gradient(135deg, var(--gold), var(--clay));
+}
+
+.massenger {
+  font-size: 26px;
+  color: var(--gold-light);
+  transition: color 0.3s ease-in-out;
+}
+
+.massengerIcon:hover .massenger {
+  color: var(--wine-deep);
+}
+
+/* გამოიძახე (Call to Action) */
+.gamoidzaxe {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 620px;
+  right: 0;
+  width: 160px;
+  height: 50px;
+  z-index: 2000;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--gold-light);
+  background: linear-gradient(135deg, var(--wine), var(--wine-deep));
+  border: 1px solid var(--gold);
+  border-right: none;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+  transition:
+    background 0.3s ease-in-out,
+    color 0.3s ease;
+}
+
+.gamoidzaxe:hover {
+  background: linear-gradient(135deg, var(--gold), var(--clay));
+  color: var(--wine-deep);
+}
+/* ==========================================================================
+        9. ზემოთ ასასვლელი ღილაკი და ანიმაციები
+        ========================================================================== */
+.scrollUpDiv {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  bottom: 30px;
+  right: 10px;
+  font-size: 26px;
+  background: radial-gradient(circle at 30% 30%, var(--wine), var(--wine-deep));
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition:
+    opacity 0.5s ease-in-out,
+    visibility 0.5s ease-in-out,
+    transform 0.3s ease;
+}
+
+.showScrollUpDiv {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scrollUpDiv:hover {
+  cursor: pointer;
+  transform: translateY(-3px);
+}
+
+.scrollUpIcon {
+  animation: moveUpDown 2s infinite steps(2, start);
+}
+
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(4px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+  75% {
+    transform: translateY(4px);
+  }
+}
+
+/* --- Media Queries --- */
+
+@media (max-width: 1200px) {
+  .divForWhiteBoxOnImage {
+    bottom: 15%;
+    right: 70%;
+  }
+
+  .divForLinkOnImage {
+    top: 110%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .divForWhiteBoxOnImage {
+    bottom: 20%;
+    right: 70%;
+    width: 180px;
+    height: 130px;
+    border-top: 2px solid var(--gold);
+    border-left: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .divForWhiteBoxOnImage::after {
+    top: -2px;
+    right: -2px;
+    width: 2px;
+    height: 130px;
+    background: linear-gradient(
+      to bottom,
+      var(--gold) 43px,
+      transparent 43px,
+      transparent 86px,
+      var(--gold) 86px
+    );
+  }
+
+  .divForLinkOnImage {
+    top: 110%;
+    font-size: 13px;
+  }
+
+  .textOnMainImage {
+    bottom: 35%;
+  }
+}
+
+@media (max-width: 770px) {
+  .whatsAppIcon {
+    top: unset;
+    bottom: 0px;
+    left: 20px;
+    animation: whatsAppAnim 0.2s linear;
+  }
+
+  @keyframes whatsAppAnim {
+    from {
+      bottom: 150px;
+    }
+
+    to {
+      bottom: 0px;
+    }
+  }
+
+  .massengerIcon {
+    top: unset;
+    bottom: 0px;
+    left: 90px;
+    animation: massengerAnim 0.2s;
+    animation-timing-function: linear;
+  }
+
+  @keyframes massengerAnim {
+    from {
+      bottom: 100px;
+    }
+
+    to {
+      bottom: 0px;
+    }
+  }
+
+  .gamoidzaxe {
+    top: unset;
+    bottom: 0px;
+    left: 160px;
+    animation: gamoidzaxeAnim 0.2s linear;
+  }
+
+  @keyframes gamoidzaxeAnim {
+    from {
+      bottom: 50px;
+    }
+
+    to {
+      bottom: 0px;
+    }
+  }
+
+  .scrollUpDiv {
+    bottom: 10px;
+  }
+}
+
+/* ანიმაცია ეკრანის გაფართოებისას (დესკტოპზე დაბრუნებისას) */
+
+@media (min-width: 771px) {
+  .whatsAppIcon {
+    animation: slideUpWhatsApp 0.3s ease-out;
+  }
+
+  @keyframes slideUpWhatsApp {
+    from {
+      top: 650px;
+    }
+    to {
+      top: 500px;
+    }
+  }
+
+  .massengerIcon {
+    animation: slideUpMassenger 0.3s ease-out;
+  }
+
+  @keyframes slideUpMassenger {
+    from {
+      top: 660px;
+    }
+    to {
+      top: 560px;
+    }
+  }
+
+  .gamoidzaxe {
+    animation: slideUpGamoidzaxe 0.3s ease-out;
+  }
+
+  @keyframes slideUpGamoidzaxe {
+    from {
+      top: 670px;
+    }
+    to {
+      top: 620px;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .mainImageDiv {
+    height: 65vw;
+  }
+
+  .divForWhiteBoxOnImage {
+    bottom: 30%;
+    left: 3%;
+    width: 80%;
+    max-width: 300px;
+    height: 130px;
+    border-top: 2px solid var(--gold);
+    border-left: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .divForWhiteBoxOnImage::after {
+    top: -2px;
+    right: -2px;
+    width: 2px;
+    height: 130px;
+    background: linear-gradient(
+      to bottom,
+      var(--gold) 43px,
+      transparent 43px,
+      transparent 86px,
+      var(--gold) 86px
+    );
+  }
+
+  .textOnMainImage {
+    top: 20%;
+    left: 0;
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width:400px) {
+  .scrollUpDiv {
+    bottom: 55px;
+  }
+}

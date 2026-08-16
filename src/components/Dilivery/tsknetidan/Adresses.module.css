@@ -1,0 +1,128 @@
+@font-face {
+  font-family: "MainFont";
+  src: url("/fonts/bpg_nino_mtavruli_normal.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FiraGO";
+  src: url("/fonts/firago-latin-400-normal.ttf") format("truetype");
+}
+
+.divForAdresses {
+  /* border: 2px solid red; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  padding: 20px 0;
+  row-gap: 30px;
+  column-gap: 20px;
+  height: auto;
+  width: 100%;
+  max-width: 650px;
+  margin-left: auto;
+}
+
+.divForAdresses > div > div {
+  font-family: "MainFont", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  min-width: 0;
+}
+
+.a_moednidan_adr_1{
+  font-family: "FiraGO";
+  color: #333333;
+  font-size: 14px;
+  display: block;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+/* ══════════════════════════════════════════
+   სოციალური ქსელების აიკონები (რჩება იგივე)
+══════════════════════════════════════════ */
+.socialSection {
+  font-family: "textStyle", sans-serif;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.iconsContainer {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 5px;
+}
+
+.iconBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #000;
+  background-color: #fff;
+  color: #000;
+  font-size: 14px;
+  text-decoration: none;
+  transition:
+    opacity 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.iconsContainer .iconBox:hover {
+  opacity: 1;
+  background-color: #000;
+  color: #fff;
+}
+
+/* ══════════════════════════════════════════
+   რესპონსივი (Media Queries) - შესწორებული
+══════════════════════════════════════════ */
+
+@media (max-width: 1240px) {
+  .divForAdresses {
+    /* border: 2px solid red; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 20px 0;
+    row-gap: 30px;
+    column-gap: 20px;
+    height: auto;
+    width: 100%;
+    max-width: unset;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 1000px) {
+  .divForAdresses {
+    /* border: 2px solid red; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 20px 0;
+    row-gap: 30px;
+    column-gap: 20px;
+    height: auto;
+    width: 100%;
+    max-width: unset;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 740px) {
+  .divForAdresses {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+  }
+}

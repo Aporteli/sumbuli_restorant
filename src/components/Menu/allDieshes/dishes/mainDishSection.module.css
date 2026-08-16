@@ -1,0 +1,262 @@
+@font-face {
+  font-family: "MainFont";
+  src: url("/fonts/bpg_nino_mtavruli_normal.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FiraGO";
+  src: url("public/fonts/firago-latin-300-normal.ttf") format("truetype");
+}
+
+:root {
+  --wine: #5c1a2b;
+  --wine-deep: #3a0f1d;
+  --gold: #c9a227;
+  --gold-light: #e6c765;
+  --parchment: #f4ecdb;
+  --ink: #2a2019;
+  --clay: #a8552e;
+}
+
+.mainDiv {
+  width: 85%;
+  background-color: var(--parchment);
+  min-height: 100vh;
+  margin: auto;
+  background-image: url("./dishImages/bg.png");
+  background-repeat: no-repeat;
+  background-position: 100% 0.5%;
+  background-size: 10vw auto;
+}
+
+.mainDivFixed {
+  width: 85%;
+  /* max-width: 2000px; */
+  background-color: var(--parchment);
+  min-height: 100vh;
+  margin: auto;
+  background-image: url("./dishImages/bg.png");
+  background-repeat: no-repeat;
+  background-position: 92% 30vh;
+  background-size: 10vw 30vh;
+  background-attachment: fixed;
+}
+
+.container {
+  width: 85%;
+  /* max-width: 1300px;  */
+  margin: 0 auto;
+}
+
+.menuGrid {
+  display: grid;
+  /* 400px იდეალურია: დიდ ეკრანზე 3 სვეტად დაჯდება, საშუალოზე - 2, მობილურზე - 1 */
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 30px;
+}
+
+/* --- მენიუს კარტა --- */
+.menuCard {
+  background-color: transparent;
+  padding: 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-sizing: border-box;
+  border: 1px solid var(--clay);
+}
+
+/* --- სურათის ბლოკი --- */
+.menuImgWrapper {
+  max-width: 250px;
+  flex-shrink: 0;
+  margin-right: 16px;
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.menuImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.05) contrast(1.02);
+  transition: transform 0.4s ease;
+}
+
+.menuCard:hover .menuImg {
+  transform: scale(1.04);
+}
+
+/* --- ტექსტების ბლოკი --- */
+.menuInfo {
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.titleSection {
+  display: flex;
+  align-items: center;
+}
+
+.menuTitle {
+  font-family: "MainFont", serif;
+  font-size: 20px;
+  color: var(--wine);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+  display: inline-block;
+}
+
+.menuDescription {
+  font-family: "FiraGO", sans-serif;
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(42, 32, 25, 0.65);
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+/* --- ფასის და აიქონის სექცია --- */
+.pricBoxAndIcon {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+.icon_dish_1 {
+  width: 16px;
+  height: 21px;
+}
+
+/* --- ოქროსფერი საფასო ჩარჩო --- */
+.priceBox {
+  border: 2px solid var(--gold);
+  background-color: rgba(201, 162, 39, 0.06);
+  border-radius: 8px;
+  padding: 4px 14px 2px 14px;
+  font-family: "MainFont", serif;
+  font-size: 28px;
+  color: var(--gold);
+  font-weight: bold;
+  display: inline-block;
+}
+
+.priceBox sup {
+  font-size: 13px;
+  top: -0.8em;
+  font-weight: normal;
+}
+
+.categorySection:not(:first-child) .categoryHeading {
+  padding-top: 120px;
+}
+
+.categoryHeading {
+  position: relative;
+  margin-bottom: 70px;
+  text-align: center;
+  font-family: "MainFont";
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 34px;
+  letter-spacing: 1px;
+}
+
+.categoryHeading::before,
+.categoryHeading::after {
+  content: "❖";
+  color: var(--gold);
+  font-size: 0.45em;
+  margin: 0 16px;
+  vertical-align: middle;
+}
+
+/* --- მობილურის ვერსია --- */
+
+@media (max-width: 1301px) {
+  .menuCard {
+    border: unset;
+    border-bottom: 2px solid var(--clay);
+  }
+}
+
+@media (max-width: 920px) {
+  .menuGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .menuCard {
+    flex-direction: column;
+  }
+
+  .menuInfo {
+    max-width: 300px;
+    margin-top: 10px;
+    padding-left: 0;
+  }
+
+  .menuImgWrapper {
+    width: 100%;
+    max-width: 300px;
+    margin-right: 0;
+  }
+
+  .pricBoxAndIcon {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .menuTitle {
+    font-size: 16px;
+  }
+
+  .priceBox {
+    font-size: 18px;
+    padding: 3px 10px;
+  }
+
+  .menuImg {
+    height: 100%;
+  }
+
+  .categoryHeading {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 500px) {
+  .menuGrid {
+    /* მობილურზე მინიმალური ზღვარი 100% გახდეს */
+    grid-template-columns: 1fr;
+  }
+
+  .menuCard {
+    flex-direction: column; /* სურათი ზემოთ, ტექსტი ქვემოთ */
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  /* სურათის კონტეინერი მობილურზე */
+  .menuImgWrapper {
+    width: 100%;
+    height: auto; /* მობილურზე სურათს მივეცით ფიქსირებული სიმაღლე */
+  }
+
+  .menuImg {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* სურათი პროპორციებს შეინარჩუნებს და ჩაჯდება ლამაზად */
+  }
+}

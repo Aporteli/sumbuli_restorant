@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=EB+Garamond:wght@400;500;600&display=swap");
+
+
+:root {
+  --wine: #5c1a2b;
+  --wine-deep: #3a0f1d;
+  --gold: #c9a227;
+  --gold-light: #e6c765;
+  --parchment: #f4ecdb;
+  --ink: #2a2019;
+  --clay: #ebbba5;
+}
+
+.mainDiv {
+  /* border: 2px solid red; */
+  position: relative;
+  margin: 80px auto 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 80px;
+  padding-bottom: 50px;
+}
+
+.mainDivForTerasa {
+  position: relative;
+  margin: 80px auto 80px auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 0px;
+}
+
+.imageDiv {
+  /* border: 1px solid red; */
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.divOnImageDiv {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: hsla(0, 0%, 0%, 0.28);
+  transition: background-color 0.3s ease-in-out;
+  /* z-index: 100; */
+}
+
+.divOnImageDiv:hover {
+  background-color: hsla(0, 0%, 0%, 0.707);
+  cursor: pointer;
+}
+
+.MainTextOnImage {
+  position: absolute;
+  top: 50px;
+  left: 30px;
+  color: #fff;
+  font-family: "Cormorant Garamond", sans-serif;
+  font-size: 25px;
+  letter-spacing: 5px;
+  /* z-index: 110; */
+}
+
+.metisNaxva {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  bottom: 80px;
+  right: 5px;
+  border-left: 1px solid var(--gold-light);
+  text-align: center;
+  color: #fff;
+  transform: rotate(-90deg);
+  padding-left: 10px;
+  font-family: "Cormorant Garamond", sans-serif;
+}
+
+.horizontalLine {
+  border-top: 1px solid var(--gold-light);
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 5%;
+  opacity: 0;
+  transition:
+    width 0.5s ease-in-out,
+    opacity 0.5s ease-in-out,
+    left 0.5s ease-in-out;
+}
+
+.verticalLine {
+  border-left: 1px solid var(--gold-light);
+  position: absolute;
+  height: 3.5%;
+  top: 20px;
+  left: 20px;
+  opacity: 0;
+  transition:
+    height 0.5s ease-in-out,
+    opacity 0.5s ease-in-out,
+    top 0.5s ease-in-out;
+}
+
+.divOnImageDiv:hover .horizontalLine {
+  width: 90%;
+  opacity: 1;
+  left: -20px;
+}
+
+.divOnImageDiv:hover .verticalLine {
+  height: 95%;
+  opacity: 1;
+  top: -20px;
+}
+
+@media (max-width: 1200px) {
+  .mainDiv {
+    /* border: 2px solid red; */
+    position: relative;
+    margin: 80px auto 80px auto;
+    width: 93%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 770px) {
+  .mainDiv {
+    /* border: 2px solid red; */
+    position: relative;
+    margin: 80px auto 80px auto;
+    width: 93%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+}

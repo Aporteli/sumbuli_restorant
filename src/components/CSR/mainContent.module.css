@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=EB+Garamond:wght@400;500;600&display=swap");
+
+
+:root {
+  --wine: #5c1a2b;
+  --wine-deep: #3a0f1d;
+  --gold: #c9a227;
+  --gold-light: #e6c765;
+  --parchment: #f4ecdb;
+  --ink: #2a2019;
+  --clay: #a8552e;
+}
+
+.mainContent {
+  width: 97%;
+  margin: 0 auto;
+  margin-top: 100px;
+  background-color: var(--parchment);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 📌 Masonry-ის კონტეინერისთვის საჭირო კლასები */
+.myMasonryGrid {
+  display: flex;
+  margin-left: -20px;
+  width: auto;
+}
+
+.myMasonryGridColumn {
+  padding-left: 20px;
+  background-clip: padding-box;
+}
+
+/* თითოეული ბლოგის ქარდის სტილები */
+.divForFlexOfBlogs {
+  background-color: var(--parchment);
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--gold); /* Add border to separate blog items */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+  overflow: hidden; /* Ensure image hover effect stays within bounds */
+}
+
+.blogItemText {
+  padding: 50px 20px;
+  font-family: "Cormorant Garamond", serif;
+  color: var(--ink);
+}
+
+.blogItemButn {
+  background: linear-gradient(135deg, var(--wine), var(--wine-deep));
+  padding: 10px 20px 6px 20px;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 5px;
+  color: var(--gold-light);
+  border: 1px solid var(--gold);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.blogItemButn:hover {
+  background: linear-gradient(135deg, var(--gold), var(--clay));
+  color: var(--wine-deep);
+}
+
+.blogItemTextDescription {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.blogItemTextTitle {
+  font-size: 20px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: bolder;
+  color: var(--wine-deep);
+}
+
+.blogItemTextLink {
+  text-decoration: none;
+  color: inherit; /* Inherit color from parent, which will be gold-light for button, ink for others */
+}
+
+.blogItem {
+  overflow: hidden;
+}
+
+.blogItemImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 2s ease-in-out;
+}
+
+.blogItem:hover .blogItemImage {
+  transform: scale(1.9);
+}
+
+@media (max-width: 990px) {
+  .divForFlexOfBlogs {
+    flex-direction: column;
+    align-items: center;
+  }
+}
